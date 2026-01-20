@@ -58,6 +58,12 @@ const Hero = () => {
     });
 
     videoRef.current.onloadedmetadata = () => {
+      // Forzar carga en iOS
+      videoRef.current.play().then(() => {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      });
+
       tl.fromTo(
         videoRef.current,
         { currentTime: 0 },
@@ -110,7 +116,10 @@ const Hero = () => {
           src="/videos/output.mp4"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
+          webkit-playsinline="true"
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
         />
       </div>
     </>
