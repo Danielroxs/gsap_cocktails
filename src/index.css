@@ -133,7 +133,7 @@ body {
   }
 
   video {
-    @apply w-full md:h-[80%] h-[60vh] absolute md:bottom-0 top-1/2 md:top-auto -translate-y-1/4 md:translate-y-0 left-0 md:object-contain object-contain object-center;
+    @apply w-full md:h-[80%] h-[60vh] absolute bottom-0 left-0 md:object-contain object-contain object-center;
   }
 
   #cocktails {
