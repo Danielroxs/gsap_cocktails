@@ -20,7 +20,7 @@ body {
   width: 100%;
   background-color: black;
   color: white;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   overflow-x: hidden;
 }
 

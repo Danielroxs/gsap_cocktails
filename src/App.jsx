@@ -11,6 +11,9 @@ import Menu from "./components/Menu";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+// Normaliza deltas de scroll (wheel/trackpad) y evita saltos/rebotes
+ScrollTrigger.normalizeScroll(true);
+
 const App = () => {
   return (
     <main>

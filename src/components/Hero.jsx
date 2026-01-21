@@ -54,6 +54,9 @@ const Hero = () => {
         end: endValue,
         scrub: true,
         pin: true,
+        pinSpacing: false,
+        anticipatePin: 1,
+        pinType: "transform",
       },
     });
 
