@@ -8,11 +8,22 @@ import Cocktails from "./components/Cocktails";
 import About from "./components/About";
 import Art from "./components/Art";
 import Menu from "./components/Menu";
+import Contact from "./components/Contact";
 
+// Buena práctica: Los plugins de GSAP se registran UNA SOLA VEZ en el archivo raíz (App.jsx) para que TODOS los componentes hijos puedan usarlos sin volver a registrarlos.
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-// Normaliza deltas de scroll (wheel/trackpad) y evita saltos/rebotes
 ScrollTrigger.normalizeScroll(true);
+// PROBLEMA SIN normalizeScroll: El scroll se bloqueaba porque:
+// - El ratón y trackpad enviaban eventos de scroll DIFERENTES y conflictivos
+// - Las animaciones de GSAP competían simultáneamente por controlar el scroll
+// - El navegador no sabía cuál evento procesar primero, congelando la página
+// - No podías subir ni bajar sin esperar a que terminara
+//
+// SOLUCIÓN: normalizeScroll(true) actúa como "árbitro"
+// - Convierte TODOS los eventos de scroll a un mismo formato estándar
+// - Evita rebotes y congelaciones
+// - Permite que todo fluya sin conflictos
 
 const App = () => {
   return (
@@ -23,6 +34,7 @@ const App = () => {
       <About />
       <Art />
       <Menu />
+      <Contact />
     </main>
   );
 };

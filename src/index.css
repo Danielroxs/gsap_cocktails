@@ -55,7 +55,7 @@ body {
 @utility masked-img {
   mask-image: url("/images/mask-img.png");
   mask-repeat: no-repeat;
-  mask-position: center;
+  mask-position: center center;
   mask-size: 50%;
 }
 
@@ -107,7 +107,7 @@ body {
       @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
 
       .content {
-        @apply flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto;
+        @apply flex lg:flex-row flex-col w-full gap-10 justify-center md:justify-between items-center lg:items-end mx-auto;
 
         p:nth-of-type(2) {
           @apply font-modern-negra text-6xl text-yellow max-w-xl;
@@ -252,7 +252,7 @@ body {
     }
 
     .cocktail-img {
-      @apply md:w-[60vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+      @apply md:w-[60vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute md:top-1/2 top-20 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
     }
 
     .masked-container {
